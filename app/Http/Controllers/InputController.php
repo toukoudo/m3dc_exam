@@ -13,6 +13,6 @@ class InputController extends Controller
     
     public function displayview()
     {
-        return view('viewpages.viewpage');
+        return view('viewpages.viewpage', ['inquiry_url' => config('defaultcfg.defaultcfg.INQUIRY_URL')]);
     }
 }
