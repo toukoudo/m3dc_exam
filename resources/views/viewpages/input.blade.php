@@ -42,6 +42,9 @@
                             					<div class="col-md-4">
                                 					<select name="todohuken" id="todohuken" class="form-control">
                                 					<option value="msg" selected="selected" class="msg">都道府県</option>
+                                                    @foreach ($prefs as $pref)
+                                						<option value="{{ $pref }}">{{ $pref }}</option>
+                                                    @endforeach
                             						</select>
                         						</div>
                     					</div>

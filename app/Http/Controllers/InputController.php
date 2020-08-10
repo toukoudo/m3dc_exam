@@ -32,13 +32,14 @@ class InputController extends Controller
             $exam_log->ip_addr = $request->ip();
             $exam_log->referer = $request->header('referer');
             $exam_log->user_agent = $request->header('User-Agent');
-            $exam_log->save()
+            $exam_log->save();
             return redirect('/viewpage');
         } elseif ($request->isMethod('get')) {
             $date = config('defaultcfg.defaultcfg.VIEW_INFO_DATE');
             $title = config('defaultcfg.defaultcfg.VIEW_INFO_TITLE');
             $prof  = config('defaultcfg.defaultcfg.VIEW_INFO_PROF');
-            return view('viewpages.input', ['date' => $date, 'title' => $title, 'prof' => $prof]);
+            $prefs  = config('const.prefectures');
+            return view('viewpages.input', ['date' => $date, 'title' => $title, 'prof' => $prof, 'prefs' => $prefs]);
         }
     }
     
