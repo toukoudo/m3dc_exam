@@ -57,7 +57,8 @@
                             			<div class="form-group">
                             				<label class="col-md-2 control-label" >参加人数</label>
                             					<div class="col-md-4">
-                                                    <input type="number" name="attendees">
+                            						<!-- FYI 意味的にはnumberだが、エラーメッセージはjQuery Validationで管理したいのでtext -->
+                            						<input type="text" name="attendees">
                     							</div>
                     					</div>
 
