@@ -25,7 +25,8 @@
             </div>
 
             <div id="patern03" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-left">
+                  M3DC Logo
                 </ul>
             </div>
           </div>
