@@ -1,0 +1,33 @@
+ローカル開発環境
+
+# 試した環境
+macOS 10.15.6
+Docker 19.03
+PHP 7.3.11
+
+# DB
+docker pull mysql:8.0.21
+docker run -it --name mysql -e MYSQL_ROOT_PASSWORD=“m3_mysql” -d -p 3306:3306 mysql:8.0.21
+docker exec -it --user root mysql  bash
+（Dockerコンテナ上で）
+mysql -h 127.0.0.1 --port 3306 -uroot -p
+（MySQL上で）
+> create user if not exists homestead IDENTIFIED BY 'secret';
+> create database if not exists homestead;
+> grant all on homestead.* to homestead;
+> alter user 'homestead' IDENTIFIED with mysql_native_password BY 'secret';
+
+# .envの設定
+cp .env.example .env
+
+# Laravel準備
+brew install composer
+composer install
+php artisan key:generate
+php artisan migrate
+
+# .envの設定
+cp .env.example .env
+
+# Laravelの起動
+php artisan serve --host=0.0.0.0 --port=8081
